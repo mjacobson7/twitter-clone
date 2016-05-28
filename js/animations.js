@@ -6,9 +6,6 @@ $(document).ready(function(){
     $('#tweet-content .tweet-compose').css('height', '5em');
     $('#tweet-controls').show();
   })
-  $('.reply .tweet-compose').on('click', function() {
-    $(this).css('height', '5em');
-  })
   $('.tweet-compose').keyup(function() {
     var charLeft = 140 - this.value.length;
     $('#char-count').html(charLeft);
@@ -74,5 +71,8 @@ $(document).ready(function(){
   })
   $('.tweet').on('click', function(){
     $(this).find('.stats').show(250);
+    $('.tweet').mouseleave(function (){
+      $(this).find('.stats').hide(250);
+    })
   })
 })
